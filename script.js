@@ -1,12 +1,37 @@
+const videos = [];
+
+// Fetch videos from YouTube playlist
+function fetchVideosFromPlaylist(playlistId, pageToken = '') {
+    const apiKey = 'AIzaSyDj_4OsyGaF8hAvr5osDZQS6xiVl6fzUV8';
+    const maxResults = 50; // Maximum number of results per page
+
+    let url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=${maxResults}&key=${apiKey}`;
+    if (pageToken !== '') {
+        url += `&pageToken=${pageToken}`;
+    }
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            data.items.forEach(item => {
+                const videoId = item.snippet.resourceId.videoId;
+                videos.push(`https://www.youtube.com/watch?v=${videoId}`);
+            });
+
+            // Check if there are more pages of results
+            if (data.nextPageToken) {
+                fetchVideosFromPlaylist(playlistId, data.nextPageToken);
+            }
+        })
+        .catch(error => console.error('Error fetching videos:', error));
+}
+
+// Replace 'YOUR_PLAYLIST_ID' with your actual playlist ID
+const playlistId = 'YOUR_PLAYLIST_ID';
+fetchVideosFromPlaylist(playlistId);
+
 const videoPlayer = document.getElementById('videoPlayer');
 const context = new AudioContext();
-
-const videos = [
-    'video1.mp4',
-    'result.mp4',
-    'video3.mp4'
-    // Add more video URLs as needed
-];
 
 const playVideoWithSound = (videoSrc) => {
     // Create a video element
