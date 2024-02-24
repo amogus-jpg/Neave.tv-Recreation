@@ -2,7 +2,7 @@ const videos = [];
 
 // Fetch videos from YouTube playlist
 function fetchVideosFromPlaylist(playlistId, pageToken = '') {
-    const apiKey = 'AIzaSyDj_4OsyGaF8hAvr5osDZQS6xiVl6fzUV8';
+    const apiKey = '';
     const maxResults = 50; // Maximum number of results per page
 
     let url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=${maxResults}&key=${apiKey}`;
