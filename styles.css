@@ -17,3 +17,10 @@ button {
     height: 100%;
     opacity: 0; /* Make the button invisible */
 }
+
+@media screen and (max-width: 600px) {
+    video {
+        width: 100%;
+        height: auto;
+    }
+}
