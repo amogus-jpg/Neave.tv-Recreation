@@ -2,9 +2,9 @@ const videoPlayer = document.getElementById('videoPlayer');
 const invisibleButton = document.getElementById('invisibleButton');
 
 const videos = [
+    'video1.mp4',
     'result.mp4',
-    'result1.mp4',
-    'video3.mp4'
+    'a-visitor.mp4'
 ];
 
 invisibleButton.addEventListener('click', () => {
