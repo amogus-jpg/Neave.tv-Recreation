@@ -27,7 +27,7 @@ function fetchVideosFromPlaylist(playlistId, pageToken = '') {
 }
 
 // Replace 'YOUR_PLAYLIST_ID' with your actual playlist ID
-const playlistId = 'YOUR_PLAYLIST_ID';
+const playlistId = 'PLb6qfXDffqNMF-vEquHTCWIL5wRfM-htB&si=qZy3Xyf95QL2kocw';
 fetchVideosFromPlaylist(playlistId);
 
 const videoPlayer = document.getElementById('videoPlayer');
