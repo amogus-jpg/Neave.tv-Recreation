@@ -24,7 +24,21 @@ const videos = [
     'videos/scenario.mp4',
     'videos/skifcha.mp4',
     'videos/xmas.mp4',
-    'videos/zone.mp4'
+    'videos/zone.mp4',
+    'videos/weirddog.mp4',
+    'videos/washer.mp4',
+    'videos/streetlamp.mp4',
+    'videos/melt.mp4',
+    'videos/kkssee.mp4',
+    'videos/reallymelt.mp4',
+    'videos/pjotro.mp4',
+    'videos/peppino.mp4',
+    'videos/bears.mp4',
+    'videos/lovely.mp4',
+    'videos/dunno.mp4',
+    'videos/devilgirl.mp4',
+    'videos/furbyad.mp4',
+    'videos/hungry.mp4'
 ];
 
 let videoPlayer = document.getElementById('videoPlayer');
@@ -32,7 +46,7 @@ let videoPlayer = document.getElementById('videoPlayer');
 const playSoundEffect = () => {
     const audioContext = new AudioContext();
 
-    fetch('addit/click_sfx.mp3')
+    fetch('sounds/sound_effect.mp3')
         .then(response => response.arrayBuffer())
         .then(arrayBuffer => audioContext.decodeAudioData(arrayBuffer))
         .then(audioBuffer => {
