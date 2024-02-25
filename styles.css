@@ -4,6 +4,17 @@ body, html {
     overflow: hidden;
 }
 
+.main-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('addit/lines.png');
+    background-size: cover;
+    background-position: center;
+}
+
 video {
     position: absolute;
     width: 100%;
@@ -18,7 +29,7 @@ button {
     opacity: 0;
 }
 
-.button-class {
+.button:hover {
     cursor: url('misc/remote_icon.png'), auto;
 }
 
