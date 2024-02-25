@@ -15,24 +15,35 @@ const videos = [
     'videos/noodlemonster.mp4'
 ];
 
-const videoPlayer = document.getElementById('videoPlayer');
+let videoPlayer = document.getElementById('videoPlayer');
 const context = new AudioContext();
 
 const playVideoWithSound = (videoSrc) => {
-    // Create a video element
-    const video = document.createElement('video');
-    video.src = videoSrc;
+    // Stop the current video (if any)
+    if (videoPlayer.src) {
+        videoPlayer.pause();
+        videoPlayer.src = '';
+    }
+
+    // Create a new video element
+    const newVideo = document.createElement('video');
+    newVideo.src = videoSrc;
 
     // Create a media element audio source node
-    const source = context.createMediaElementSource(video);
+    const source = context.createMediaElementSource(newVideo);
 
     // Connect the audio source to the audio context output
     source.connect(context.destination);
 
-    // Play the video
-    video.play();
+    // Replace the existing video player with the new video
+    videoPlayer.parentNode.replaceChild(newVideo, videoPlayer);
+    videoPlayer = newVideo; // Update reference to the new video element
+
+    // Play the new video
+    newVideo.play();
 };
 
+const invisibleButton = document.getElementById('invisibleButton');
 invisibleButton.addEventListener('click', () => {
     const randomIndex = Math.floor(Math.random() * videos.length);
     const randomVideo = videos[randomIndex];
