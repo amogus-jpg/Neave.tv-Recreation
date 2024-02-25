@@ -1,19 +1,19 @@
-const playlist = [];
-
-videos.push('videos/carnival.mp4');
-videos.push('videos/club.mp4');
-videos.push('videos/darkstar.mp4');
-videos.push('videos/conflict.mp4');
-videos.push('videos/goats.mp4');
-videos.push('videos/germs.mp4');
-videos.push('videos/handdj.mp4');
-videos.push('videos/hamsters.mp4');
-videos.push('videos/dog.mp4');
-videos.push('videos/eegah.mp4');
-videos.push('videos/kick.mp4');
-videos.push('videos/hardbass.mp4');
-videos.push('videos/letsgetit.mp4');
-videos.push('videos/noodlemonster.mp4');
+const videos = [
+    'videos/carnival.mp4',
+    'videos/club.mp4',
+    'videos/darkstar.mp4',
+    'videos/conflict.mp4',
+    'videos/goats.mp4',
+    'videos/germs.mp4',
+    'videos/handdj.mp4',
+    'videos/hamsters.mp4',
+    'videos/dog.mp4',
+    'videos/eegah.mp4',
+    'videos/kick.mp4',
+    'videos/hardbass.mp4',
+    'videos/letsgetit.mp4',
+    'videos/noodlemonster.mp4'
+];
 
 const videoPlayer = document.getElementById('videoPlayer');
 const context = new AudioContext();
