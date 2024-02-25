@@ -16,10 +16,7 @@ button {
     width: 100%;
     height: 100%;
     opacity: 0;
-}
-
-.button:hover {
-    cursor: url('addit/remote_icon.png'), auto;
+    cursor: url('addit/remote_icon.png');
 }
 
 .scanlines {
