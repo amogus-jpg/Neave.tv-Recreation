@@ -46,7 +46,7 @@ let videoPlayer = document.getElementById('videoPlayer');
 const playSoundEffect = () => {
     const audioContext = new AudioContext();
 
-    fetch('sounds/sound_effect.mp3')
+    fetch('addit/click_sfx.mp3')
         .then(response => response.arrayBuffer())
         .then(arrayBuffer => audioContext.decodeAudioData(arrayBuffer))
         .then(audioBuffer => {
