@@ -19,35 +19,49 @@ const videos = [
     'videos/owls.mp4',
     'videos/spoon.mp4',
     'videos/prank.mp4',
+    'videos/outbreak.mp4',
+    'videos/objectification.mp4',
+    'videos/scenario.mp4',
+    'videos/skifcha.mp4',
+    'videos/xmas.mp4',
+    'videos/zone.mp4'
 ];
 
 let videoPlayer = document.getElementById('videoPlayer');
 
-// Function to play a sound effect
 const playSoundEffect = () => {
-    const audio = new Audio('misc/click_sfx.mp3'); // Path to your sound effect file
-    audio.play();
+    const audioContext = new AudioContext();
+
+    fetch('sounds/sound_effect.mp3')
+        .then(response => response.arrayBuffer())
+        .then(arrayBuffer => audioContext.decodeAudioData(arrayBuffer))
+        .then(audioBuffer => {
+            const source = audioContext.createBufferSource();
+            source.buffer = audioBuffer;
+
+            source.connect(audioContext.destination);
+
+            source.start();
+        })
+        .catch(error => {
+            console.error('Error loading sound effect:', error);
+        });
 };
 
 const playVideoWithSound = (videoSrc) => {
-    // Stop the current video (if any)
     if (videoPlayer.src) {
         videoPlayer.pause();
         videoPlayer.src = '';
     }
 
-    // Create a new video element
     const newVideo = document.createElement('video');
     newVideo.src = videoSrc;
 
-    // Replace the existing video player with the new video
     videoPlayer.parentNode.replaceChild(newVideo, videoPlayer);
-    videoPlayer = newVideo; // Update reference to the new video element
+    videoPlayer = newVideo;
 
-    // Play the new video
     newVideo.play();
 
-    // Play sound effect
     playSoundEffect();
 };
 
