@@ -38,7 +38,32 @@ const videos = [
     'videos/dunno.mp4',
     'videos/devilgirl.mp4',
     'videos/furbyad.mp4',
-    'videos/hungry.mp4'
+    'videos/hungry.mp4',
+    'videos/hehe_train.mp4',
+    'videos/heliodisplay.mp4',
+    'videos/hells_kitchen.mp4',
+    'videos/hotel_mapino.mp4',
+    'videos/human_drums.mp4',
+    'videos/humans.mp4',
+    'videos/infernoptix.mp4',
+    'videos/jacko_cat.mp4',
+    'videos/kitty_cat.mp4',
+    'videos/kittys_wizard.mp4',
+    'videos/laptop_drop.mp4',
+    'videos/lumasolator.mp4',
+    'videos/malfunction.mp4',
+    'videos/parking_encounter.mp4',
+    'videos/peek_a_boo.mp4',
+    'videos/pictures_of_walls.mp4',
+    'videos/pizzala_com.mp4',
+    'videos/public_brand_study.mp4',
+    'videos/setpixel.mp4',
+    'videos/squirrel_monster.mp4',
+    'videos/theros.mp4',
+    'videos/useless_superpower.mp4',
+    'videos/wba_cage.mp4',
+    'videos/wooden_mirror.mp4',
+    'videos/your_height_only.mp4'
 ];
 
 let videoPlayer = document.getElementById('videoPlayer');
