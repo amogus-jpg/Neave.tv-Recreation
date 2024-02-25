@@ -9,7 +9,6 @@ video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    background-color: black; /* Ensure video player is visible */
 }
 
 button {
@@ -17,6 +16,10 @@ button {
     width: 100%;
     height: 100%;
     opacity: 0;
+}
+
+.button-class {
+    cursor: url('misc/remote_icon.png'), auto;
 }
 
 @media screen and (max-width: 600px) {
