@@ -9,6 +9,7 @@ if (isPortrait && screenWidth <= 600) {
 }
 
 const videos = [
+    'videos/aerobics.mp4',
     'videos/carnival.mp4',
     'videos/club.mp4',
     'videos/darkstar.mp4',
