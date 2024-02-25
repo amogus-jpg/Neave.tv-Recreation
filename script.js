@@ -18,30 +18,40 @@ const videos = [
     'videos/ronald.mp4',
     'videos/owls.mp4',
     'videos/spoon.mp4',
-    'videos/prank.mp4'
+    'videos/prank.mp4',
 ];
 
-const videoPlayer = document.getElementById('videoPlayer');
-const context = new AudioContext();
+let videoPlayer = document.getElementById('videoPlayer');
 
+// Function to play a sound effect
 const playSoundEffect = () => {
     const audio = new Audio('misc/click_sfx.mp3'); // Path to your sound effect file
     audio.play();
 };
 
 const playVideoWithSound = (videoSrc) => {
-    const video = document.createElement('video');
-    video.src = videoSrc;
+    // Stop the current video (if any)
+    if (videoPlayer.src) {
+        videoPlayer.pause();
+        videoPlayer.src = '';
+    }
 
-    const source = context.createMediaElementSource(video);
+    // Create a new video element
+    const newVideo = document.createElement('video');
+    newVideo.src = videoSrc;
 
-    source.connect(context.destination);
+    // Replace the existing video player with the new video
+    videoPlayer.parentNode.replaceChild(newVideo, videoPlayer);
+    videoPlayer = newVideo; // Update reference to the new video element
 
-    video.play();
+    // Play the new video
+    newVideo.play();
 
+    // Play sound effect
     playSoundEffect();
 };
 
+const invisibleButton = document.getElementById('invisibleButton');
 invisibleButton.addEventListener('click', () => {
     const randomIndex = Math.floor(Math.random() * videos.length);
     const randomVideo = videos[randomIndex];
