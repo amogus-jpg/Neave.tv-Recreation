@@ -1,34 +1,19 @@
-const videos = [];
+const playlist = [];
 
-// Fetch videos from YouTube playlist
-function fetchVideosFromPlaylist(playlistId, pageToken = '') {
-    const apiKey = '';
-    const maxResults = 50; // Maximum number of results per page
-
-    let url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=${maxResults}&key=${apiKey}`;
-    if (pageToken !== '') {
-        url += `&pageToken=${pageToken}`;
-    }
-
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            data.items.forEach(item => {
-                const videoId = item.snippet.resourceId.videoId;
-                videos.push(`https://www.youtube.com/watch?v=${videoId}`);
-            });
-
-            // Check if there are more pages of results
-            if (data.nextPageToken) {
-                fetchVideosFromPlaylist(playlistId, data.nextPageToken);
-            }
-        })
-        .catch(error => console.error('Error fetching videos:', error));
-}
-
-// Replace 'YOUR_PLAYLIST_ID' with your actual playlist ID
-const playlistId = 'PLb6qfXDffqNMF-vEquHTCWIL5wRfM-htB&si=qZy3Xyf95QL2kocw';
-fetchVideosFromPlaylist(playlistId);
+videos.push('videos/carnival.mp4');
+videos.push('videos/club.mp4');
+videos.push('videos/darkstar.mp4');
+videos.push('videos/conflict.mp4');
+videos.push('videos/goats.mp4');
+videos.push('videos/germs.mp4');
+videos.push('videos/handdj.mp4');
+videos.push('videos/hamsters.mp4');
+videos.push('videos/dog.mp4');
+videos.push('videos/eegah.mp4');
+videos.push('videos/kick.mp4');
+videos.push('videos/hardbass.mp4');
+videos.push('videos/letsgetit.mp4');
+videos.push('videos/noodlemonster.mp4');
 
 const videoPlayer = document.getElementById('videoPlayer');
 const context = new AudioContext();
