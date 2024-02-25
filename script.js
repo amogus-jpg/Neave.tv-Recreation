@@ -12,38 +12,36 @@ const videos = [
     'videos/kick.mp4',
     'videos/hardbass.mp4',
     'videos/letsgetit.mp4',
-    'videos/noodlemonster.mp4'
+    'videos/noodlemonster.mp4',
+    'videos/hellodave.mp4',
+    'videos/motorcycle.mp4',
+    'videos/ronald.mp4',
+    'videos/owls.mp4',
+    'videos/spoon.mp4',
+    'videos/prank.mp4'
 ];
 
-let videoPlayer = document.getElementById('videoPlayer');
+const videoPlayer = document.getElementById('videoPlayer');
 const context = new AudioContext();
 
-const playVideoWithSound = (videoSrc) => {
-    // Stop the current video (if any)
-    if (videoPlayer.src) {
-        videoPlayer.pause();
-        videoPlayer.src = '';
-    }
-
-    // Create a new video element
-    const newVideo = document.createElement('video');
-    newVideo.src = videoSrc;
-
-    // Create a media element audio source node
-    const source = context.createMediaElementSource(newVideo);
-
-    // Connect the audio source to the audio context output
-    source.connect(context.destination);
-
-    // Replace the existing video player with the new video
-    videoPlayer.parentNode.replaceChild(newVideo, videoPlayer);
-    videoPlayer = newVideo; // Update reference to the new video element
-
-    // Play the new video
-    newVideo.play();
+const playSoundEffect = () => {
+    const audio = new Audio('misc/click_sfx.mp3'); // Path to your sound effect file
+    audio.play();
 };
 
-const invisibleButton = document.getElementById('invisibleButton');
+const playVideoWithSound = (videoSrc) => {
+    const video = document.createElement('video');
+    video.src = videoSrc;
+
+    const source = context.createMediaElementSource(video);
+
+    source.connect(context.destination);
+
+    video.play();
+
+    playSoundEffect();
+};
+
 invisibleButton.addEventListener('click', () => {
     const randomIndex = Math.floor(Math.random() * videos.length);
     const randomVideo = videos[randomIndex];
