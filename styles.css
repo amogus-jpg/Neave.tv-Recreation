@@ -18,17 +18,13 @@ button {
     opacity: 0;
 }
 
-.button:hover {
-    cursor: url('addit/remote_icon.png'), auto;
-}
-
 .scanlines {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url('addit/scanlines.png'); /* Path to your scanlines image */
-    opacity: 0.159; /* Adjust opacity as needed */
-    pointer-events: none; /* Ensure scanlines don't intercept mouse events */
+    background-image: url('addit/scanlines.png');
+    opacity: 0.159;
+    pointer-events: none;
 }
 
 .custom-image-link {
@@ -52,7 +48,16 @@ button {
 
 @media screen and (max-width: 600px) {
     video {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
         width: 100%;
-        height: min-content;
+        height: 100%;
+        overflow: hidden;
+        cursor: pointer;
+        background-image: url(https://neave.tv/assets/images/testcard-shaded.png);
+        background-size: 100% 100%;
     }
 }
