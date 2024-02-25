@@ -1,3 +1,13 @@
+const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+
+const screenWidth = window.innerWidth;
+
+if (isPortrait && screenWidth <= 600) {
+    document.querySelector('video').classList.add('centered-video');
+} else {
+    document.querySelector('video').classList.remove('centered-video');
+}
+
 const videos = [
     'videos/carnival.mp4',
     'videos/club.mp4',
