@@ -63,7 +63,12 @@ const videos = [
     'videos/useless_superpower.mp4',
     'videos/wba_cage.mp4',
     'videos/wooden_mirror.mp4',
-    'videos/your_height_only.mp4'
+    'videos/your_height_only.mp4',
+    'videos/aerosol.mp4',
+    'videos/bomb.mp4',
+    'videos/diarrhea.mp4',
+    'videos/pigmidance.mp4',
+    'videos/tinker-tailor.mp4'
 ];
 
 let videoPlayer = document.getElementById('videoPlayer');
