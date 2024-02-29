@@ -23,7 +23,7 @@ const videos = [
     'videos/hellodave.mp4',
     'videos/motorcycle.mp4',
     'videos/ronald.mp4',
-    'videos/owls.mp4'
+    'videos/owls.mp4',
     'videos/spoon.mp4',
     'videos/prank.mp4',
     'videos/outbreak.mp4',
