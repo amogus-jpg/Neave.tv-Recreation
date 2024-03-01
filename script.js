@@ -5,7 +5,6 @@ const videos = [
     'videos/special.mp4',
     'videos/giantmonster.mp4',
     'videos/wolf_spirit.mp4',
-    'videos/wolf_spirit.mp4',
     'videos/bimbamboom.mp4',
     'videos/driving_guide.mp4',
     'videos/street_monster.mp4',
